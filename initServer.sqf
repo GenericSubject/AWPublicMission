@@ -66,3 +66,18 @@ waitUntil {sleep 1; SEN_complete isEqualTo 2};
     };
 };
 };
+
+addMissionEventHandler ["HandleDisconnect", {
+    private ["_count", "_allPlayer"];
+    params ["_unit", "_id", "_uid", "_name"];
+
+    _allPlayer = if (isNil "SEN_HC") then {
+        allPlayers
+    } else {
+        allPlayers - [SEN_HC]
+    };
+    _count = count (_allPlayer - [_unit]);
+    if (_count == 0) then {
+        [["Won"], "BIS_fnc_endMissionServer", false] call BIS_fnc_MP;
+    };
+}];
