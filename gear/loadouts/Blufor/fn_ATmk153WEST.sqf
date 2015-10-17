@@ -11,12 +11,12 @@ JK_vvsArray = [];
 
 //clothing - (string)
 _uniforms = ["rhs_uniform_FROG01_m81", "rhs_uniform_FROG01_wd"];
-_vests = ["rhsusf_spc_iar"];
+_vests = ["rhsusf_spc_rifleman"];
 _headgears = ["rhsusf_ach_bare", "rhsusf_ach_bare_des", "rhsusf_ach_bare_des_ess", "rhsusf_ach_bare_des_headset", "rhsusf_ach_bare_des_headset_ess", "rhsusf_ach_bare_ess", "rhsusf_ach_bare_headset", "rhsusf_ach_bare_headset_ess", "rhsusf_ach_bare_semi", "rhsusf_ach_bare_semi_ess", "rhsusf_ach_bare_semi_headset", "rhsusf_ach_bare_semi_headset_ess", "rhsusf_ach_bare_tan", "rhsusf_ach_bare_tan_ess", "rhsusf_ach_bare_tan_headset", "rhsusf_ach_bare_tan_headset_ess", "rhsusf_ach_bare_wood", "rhsusf_ach_bare_wood_ess", "rhsusf_ach_bare_wood_headset", "rhsusf_ach_bare_wood_headset_ess","rhsusf_ach_helmet_M81", "rhsusf_lwh_helmet_marpatwd", "rhsusf_lwh_helmet_marpatwd_ess", "rhsusf_lwh_helmet_marpatwd_headset", "rhsusf_mich_bare_norotos", "rhsusf_mich_bare_norotos_arc", "rhsusf_mich_helmet_marpatwd", "rhsusf_mich_helmet_marpatwd_alt", "rhsusf_mich_helmet_marpatwd_norotos", "rhsusf_mich_helmet_marpatwd_norotos_arc"];
 _backpacks = ["B_Carryall_cbr"];
 _insignium = "";
 _useProfileGoggles = 1;        //If set to 1, goggles from your profile will be used. If set to 0, _goggles will be added (or profile goggles will be removed when _goggles is left empty).
-_goggles = "G_Lowprofile";
+_goggles = "";
 
 //weapons - primary weapon - (string)
 _primaryweapon = ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4a1_grip", "rhs_weap_m4a1_carryhandle_grip2", "rhs_weap_m4a1_carryhandle_grip", "rhs_weap_m4a1_carryhandle_pmag", "rhs_weap_m4a1", "rhs_weap_m4a1_grip2"];
@@ -26,7 +26,7 @@ _itemsPrimaryweapon = [["rhsusf_acc_ACOG2_USMC","rhsusf_acc_ACOG3_USMC","rhsusf_
 
 //primary weapon ammo (if a primary weapon is given) and how many tracer mags - (integer)
 _ARhandle = 0;        //should stay 0. Determines the class of ammunition for BIS_fnc_addWeapon. Specific Rifles need specific _ARhandles. Test it out.
-_primaryweaponAmmo = 4;
+_primaryweaponAmmo = 11;
 _primaryweaponTracers = 0;
 
 //40mm Grenades - (integer)
@@ -51,14 +51,25 @@ _handgun = "rhsusf_weap_m1911a1";
 _itemsHandgun = [];
 
 //handgun ammo (if a handgun is given) - (integer)
-_handgunAmmo = 1;
+_handgunAmmo = 2;
 
 //weapons - launcher - (string)
-_launcher = "";
+_launcher = "rhs_weap_M136";
+if (JK_TF47_Launcher) then {
+    _launcher = "tf47_smaw_green";
+} else {
+    _launcher = "rhs_weap_M136";
+};
 _launcherHandle = 0;    //should stay the way it is. Determines the class of ammunition for BIS_fnc_addWeapon. Specific launchers need specific _launcherHandle. Test it out.
 
 //launcher ammo (if a launcher is given) - (integer)
-_launcherAmmo = 0;
+_launcherAmmo = 1;
+if (JK_TF47_Launcher) then {
+    _launcherAmmo = 0;
+} else {
+    _launcherAmmo = 1;
+};
+
 
 //binocular - (string)
 _binocular = "ACE_Vector";
@@ -70,8 +81,8 @@ _grenadeSmokeYellow = 0;
 _grenadeSmokeOrange = 0;
 _grenadeSmokeRed = 0;
 _grenadeSmokePurple = 0;
-_grenadeSmokeBlue = 0;
-_grenadeSmokeGreen = 0;
+_grenadeSmokeBlue = 1;
+_grenadeSmokeGreen = 1;
 _chemlightYellow = 0;
 _chemlightRed = 0;
 _chemlightGreen = 0;
@@ -106,9 +117,14 @@ _itemsUniform = [];
 _itemsVest = [];
 
 //items added specifically to Backpack: - (array)
-_itemsBackpack = ["ToolKit","MineDetector"];
+_itemsBackpack = [];
+if (JK_TF47_Launcher) then {
+    _itemsBackpack = ["tf47_smaw_HEAA","tf47_smaw_SR"];
+} else {
+    _itemsBackpack = [];
+};
 
-//linked items (don't put "ItemRadio" in here, as it's set with _equipRadio) - (array)
+//linked items - (array)
 _itemsLink = [
         "ItemRadio",
         "ItemWatch",
@@ -128,8 +144,8 @@ _player setCaptive true;    //unfortunately necessary due to the time consumed b
 [_player] call jk_loadOut_fnc_gear;
 _player setVariable ["ace_medical_medicClass", 0];
 _player setVariable ["JK_CrateSpawnAllowed", false];
-_player setVariable ["ACE_IsEngineer", 2];
+_player setVariable ["ACE_IsEngineer", 0];
 _player setVariable ["JK_isPilot", false];
+_player addSecondaryWeaponItem "tf47_optic_smaw";
 _player setCaptive false;
-
 if (true) exitWith {};

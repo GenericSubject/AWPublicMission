@@ -26,7 +26,26 @@
             <English>MG-Assistent</English>
             <German>MG-Assistent</German>
         </Key>
+        if (JK_TF47_Launcher) then {
         <Key ID="STR_JK_GEAR_AT">
+            <English>AT-Gunner(M3MAAWS)</English>
+            <German>AT-Schütze(M3MAAWS)</German>
+        </Key>
+        <Key ID="STR_JK_GEAR_ATmk153">
+            <English>AT-Gunner(SMAW)</English>
+            <German>AT-Schütze(SMAW)</German>
+        </Key>
+
+        <Key ID="STR_JK_GEAR_AtAss">
+            <English>Assistent AT Gunner(M3MAAWS)</English>
+            <German>AT Assistent(M3MAAWS)</German>
+        </Key>
+        }else{
+        <Key ID="STR_JK_GEAR_AT">
+            <English>AT-Gunner</English>
+            <German>AT-Schütze</German>
+        </Key>
+        <Key ID="STR_JK_GEAR_ATmk153">
             <English>AT-Gunner</English>
             <German>AT-Schütze</German>
         </Key>
@@ -35,6 +54,7 @@
             <English>Assistent AT Gunner</English>
             <German>AT Assistent</German>
         </Key>
+        }
         <Key ID="STR_JK_GEAR_GRENADIER">
             <English>Grenadier</English>
             <German>Grenadier</German>
@@ -42,6 +62,10 @@
         <Key ID="STR_JK_GEAR_RIFLEMAN">
             <English>Rifleman</English>
             <German>Schütze</German>
+        </Key>
+        <Key ID="STR_JK_GEAR_paratrooper">
+            <English>Paratrooper</English>
+            <German>Fallschirmjäger</German>
         </Key>
         <Key ID="STR_JK_GEAR_MARKSMAN">
             <English>Marksman</English>

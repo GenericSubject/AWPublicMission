@@ -1,4 +1,4 @@
-private ["_fnc_medical", "_fnc_ammo", "_fnc_misc", "_fnc_Radio"];
+private ["_fnc_medical", "_fnc_ammo","_fnc_at_ammo", "_fnc_misc", "_fnc_Radio"];
 JK_fnc_createCrate = {
     private "_crate";
     if (!(JK_ammoSuppAvail)) exitWith {
@@ -87,17 +87,6 @@ _fnc_ammo = {
             ["UGL_FlareGreen_F", 15],
             ["UGL_FlareCIR_F", 15],
 
-            //AT
-            ["rhs_weap_M136", 5],
-            //["tf47_at4_HEDP", 5],
-            //["tf47_at4_HP", 5],
-
-            //["tf47_m3maaws_HEAT", 5],
-            //["tf47_m3maaws_HEDP", 5],
-            //["tf47_m3maaws_HE", 5],
-            //["tf47_m3maaws_SMOKE", 5],
-            //["tf47_m3maaws_ILLUM", 5],
-
             //MG Munition
             ["rhs_200rnd_556x45_M_SAW", 30],
             ["rhsusf_100Rnd_762x51", 30],
@@ -111,6 +100,35 @@ _fnc_ammo = {
             ["DemoCharge_Remote_Mag", 6],
             //Marksman
             ["rhsusf_20Rnd_762x51_m118_special_Mag", 20]
+        ]
+    ] call JK_fnc_createCrate;
+};
+
+_fnc_at_ammo = {
+    [
+        "Box_NATO_Wps_F",
+        20,
+        [
+            //AT
+            if (JK_TF47_Launcher) then {
+                ["tf47_at4_HEDP"],
+                ["tf47_at4_HEDP", 5],
+                ["tf47_at4_HP", 5],
+
+                ["tf47_m3maaws_HEAT", 5],
+                ["tf47_m3maaws_HEDP", 5],
+                ["tf47_m3maaws_HE", 3],
+                ["tf47_m3maaws_SMOKE", 3],
+                ["tf47_m3maaws_ILLUM", 3],
+
+                ["tf47_smaw_HEAA", 5],
+                ["tf47_smaw_HEDP", 5],
+                ["tf47_smaw_SR", 5]
+            } else {
+                ["rhs_weap_M136",10],
+                ["SatchelCharge_Remote_Mag", 4],
+                ["DemoCharge_Remote_Mag", 6]
+            };,
         ]
     ] call JK_fnc_createCrate;
 };
@@ -142,7 +160,8 @@ _fnc_misc = {
         ["ACE_microDAGR", 5],
         ["ACE_bodyBag", 5],
         ["ACE_MapTools", 5],
-        ["ACE_wirecutter", 2]
+        ["ACE_wirecutter", 2],
+        ["B_Parachute", 15]
     ]] call JK_fnc_createCrate;
 };
 
@@ -158,6 +177,7 @@ VVS addAction["<t color='#3f3fff'>Open Vehicle Menu</t>", VVS_fnc_openVVS, ["SEN
 ammonition addAction ["<t color='#3f3fff'>Request Radio Crate</t>", _fnc_Radio, [], 0, false, false, "", "player getVariable ['JK_CrateSpawnAllowed', false]"];
 
 ammonition addAction ["<t color='#3f3fff'>Request Ammo Crate</t>", _fnc_ammo];
+ammonition addAction ["<t color='#3f3fff'>Request AT-Ammo Crate</t>", _fnc_at_ammo];
 ammonition addAction ["<t color='#3f3fff'>Request ACE Misc Crate</t>", _fnc_misc];
 ammonition addAction ["<t color='#3f3fff'>Request Medic Crate</t>", _fnc_medical];
 ammonition addAction ["<t color='#3f3fff'>Request UAV Crate</t>", _fnc_UAV];

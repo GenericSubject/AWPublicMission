@@ -13,7 +13,7 @@ JK_vvsArray = [];
 _uniforms = ["rhs_uniform_FROG01_m81", "rhs_uniform_FROG01_wd"];
 _vests = ["rhsusf_spc_rifleman"];
 _headgears = ["rhsusf_ach_bare", "rhsusf_ach_bare_des", "rhsusf_ach_bare_des_ess", "rhsusf_ach_bare_des_headset", "rhsusf_ach_bare_des_headset_ess", "rhsusf_ach_bare_ess", "rhsusf_ach_bare_headset", "rhsusf_ach_bare_headset_ess", "rhsusf_ach_bare_semi", "rhsusf_ach_bare_semi_ess", "rhsusf_ach_bare_semi_headset", "rhsusf_ach_bare_semi_headset_ess", "rhsusf_ach_bare_tan", "rhsusf_ach_bare_tan_ess", "rhsusf_ach_bare_tan_headset", "rhsusf_ach_bare_tan_headset_ess", "rhsusf_ach_bare_wood", "rhsusf_ach_bare_wood_ess", "rhsusf_ach_bare_wood_headset", "rhsusf_ach_bare_wood_headset_ess","rhsusf_ach_helmet_M81", "rhsusf_lwh_helmet_marpatwd", "rhsusf_lwh_helmet_marpatwd_ess", "rhsusf_lwh_helmet_marpatwd_headset", "rhsusf_mich_bare_norotos", "rhsusf_mich_bare_norotos_arc", "rhsusf_mich_helmet_marpatwd", "rhsusf_mich_helmet_marpatwd_alt", "rhsusf_mich_helmet_marpatwd_norotos", "rhsusf_mich_helmet_marpatwd_norotos_arc"];
-_backpacks = ["rhsusf_assault_eagleaiii_coy"];
+_backpacks = ["B_Carryall_cbr"];
 _insignium = "";
 _useProfileGoggles = 1;        //If set to 1, goggles from your profile will be used. If set to 0, _goggles will be added (or profile goggles will be removed when _goggles is left empty).
 _goggles = "";
@@ -26,7 +26,7 @@ _itemsPrimaryweapon = [["rhsusf_acc_ACOG2_USMC","rhsusf_acc_ACOG3_USMC","rhsusf_
 
 //primary weapon ammo (if a primary weapon is given) and how many tracer mags - (integer)
 _ARhandle = 0;        //should stay 0. Determines the class of ammunition for BIS_fnc_addWeapon. Specific Rifles need specific _ARhandles. Test it out.
-_primaryweaponAmmo = 11;
+_primaryweaponAmmo = 8;
 _primaryweaponTracers = 0;
 
 //40mm Grenades - (integer)
@@ -65,7 +65,7 @@ _launcherHandle = 0;    //should stay the way it is. Determines the class of amm
 //launcher ammo (if a launcher is given) - (integer)
 _launcherAmmo = 1;
 if (JK_TF47_Launcher) then {
-    _launcherAmmo = 2;
+    _launcherAmmo = 1;
 } else {
     _launcherAmmo = 1;
 };
@@ -75,7 +75,7 @@ if (JK_TF47_Launcher) then {
 _binocular = "ACE_Vector";
 
 //throwables - (integer)
-_grenadeHE = 2;
+_grenadeHE = 0;
 _grenadeSmokeWhite = 2;
 _grenadeSmokeYellow = 0;
 _grenadeSmokeOrange = 0;
