@@ -95,7 +95,9 @@ _fnc_ammo = {
             ["30Rnd_556x45_Stanag", 55],
             ["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red", 45],
 
-
+            //Sprengstoffe+Zünder
+            ["ACE_M26_Clacker", 2],
+            ["ACE_Clacker", 4],
             ["SatchelCharge_Remote_Mag", 4],
             ["DemoCharge_Remote_Mag", 6],
             //Marksman
@@ -110,13 +112,11 @@ _fnc_at_ammo = {
         20,
         [
             //AT
-            if (JK_TF47_Launcher) then {
-                ["tf47_at4_HEDP"],
                 ["tf47_at4_HEDP", 5],
                 ["tf47_at4_HP", 5],
 
                 ["tf47_m3maaws_HEAT", 5],
-                ["tf47_m3maaws_HEDP", 5],
+                ["tf47_m3maaws_HEDP", 3],
                 ["tf47_m3maaws_HE", 3],
                 ["tf47_m3maaws_SMOKE", 3],
                 ["tf47_m3maaws_ILLUM", 3],
@@ -124,11 +124,6 @@ _fnc_at_ammo = {
                 ["tf47_smaw_HEAA", 5],
                 ["tf47_smaw_HEDP", 5],
                 ["tf47_smaw_SR", 5]
-            } else {
-                ["rhs_weap_M136",10],
-                ["SatchelCharge_Remote_Mag", 4],
-                ["DemoCharge_Remote_Mag", 6]
-            };,
         ]
     ] call JK_fnc_createCrate;
 };
@@ -161,7 +156,11 @@ _fnc_misc = {
         ["ACE_bodyBag", 5],
         ["ACE_MapTools", 5],
         ["ACE_wirecutter", 2],
-        ["B_Parachute", 15]
+        ["B_Parachute", 15],
+        ["rhsusf_acc_eotech_552", 2],
+        ["optic_Hamr", 2],
+        ["rhsusf_acc_SR25S", 2],
+        ["rhsusf_acc_compm4", 2]
     ]] call JK_fnc_createCrate;
 };
 

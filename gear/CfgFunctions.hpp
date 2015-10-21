@@ -21,7 +21,7 @@ class JK_loadOut
         class armanWEST {};
         class assmgWEST {};
         class mgWEST {};
-        class paratrooper {};
+        class paratrooperWEST {};
         class atWEST {};
         class atmk153WEST {};
         class atassWEST {};

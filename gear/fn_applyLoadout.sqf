@@ -99,7 +99,7 @@ if (_class == "" || JK_var_gearByClasses) then {
         case (typeOf _target in _MGClass): {"MG"};
         case (typeOf _target in _assMGClass): {"assMG"};
         case (typeOf _target in _ATClass): {"AT"};
-        case (typeOf _target in _ATmk153Class):: {"ATmk153"};
+        case (typeOf _target in _ATmk153Class): {"ATmk153"};
         case (typeOf _target in _ATassClass): {"ATAss"};
         case (typeOf _target in _grenadierClass): {"grenadier"};
         case (typeOf _target in _soldierClass): {"Rifleman"};

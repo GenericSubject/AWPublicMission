@@ -27,7 +27,7 @@ _itemsPrimaryweapon = [["rhsusf_acc_ACOG2_USMC","rhsusf_acc_ACOG3_USMC","rhsusf_
 //primary weapon ammo (if a primary weapon is given) and how many tracer mags - (integer)
 _ARhandle = 0;        //should stay 0. Determines the class of ammunition for BIS_fnc_addWeapon. Specific Rifles need specific _ARhandles. Test it out.
 _primaryweaponAmmo = 6;
-_primaryweaponTracers = 6;
+_primaryweaponTracers = 3;
 
 //40mm Grenades - (integer)
 _40mmHeGrenadesAmmo = 0;
@@ -108,7 +108,7 @@ _MediKit = 0;        //if set to 1, a MediKit and all FirstAidKits will be added
 _itemsUniform = [];
 
 //items added specifically to vest: - (array)
-_itemsVest = [];
+_itemsVest = ["ACE_Flashlight_MX991","ACE_MapTools","ACE_CableTie","ACE_microDAGR","rhsusf_acc_compm4"];
 
 //items added specifically to Backpack: - (array)
 _itemsBackpack = [];
@@ -124,7 +124,7 @@ _itemsLink = [
         ];
 
 //items added to any container - (array)
-_items = ["ACE_Flashlight_MX991","ACE_MapTools","ACE_CableTie","ACE_microDAGR","rhsusf_acc_compm4"];
+_items = [];
 
 ///// No editing necessary below this line /////
 params ["_player"];
