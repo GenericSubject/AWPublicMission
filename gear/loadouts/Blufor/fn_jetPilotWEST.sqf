@@ -19,7 +19,7 @@ _useProfileGoggles = 0;        //If set to 1, goggles from your profile will be 
 _goggles = "G_Aviator";
 
 //weapons - primary weapon - (string)
-_primaryweapon = ["rhs_weap_m4a1_carryhandle", "rhs_weap_m4a1_grip", "rhs_weap_m4a1_carryhandle_grip2", "rhs_weap_m4a1_carryhandle_grip", "rhs_weap_m4a1_carryhandle_pmag", "rhs_weap_m4a1", "rhs_weap_m4a1_grip2"];
+_primaryweapon = ["rhs_weap_m16a4", "rhs_weap_m16a4_grip", "rhs_weap_m16a4_carryhandle", "rhs_weap_m16a4_carryhandle_grip_pmag", "rhs_weap_m16a4_carryhandle_grip", "rhs_weap_m16a4_carryhandle_pmag", "rhs_weap_m4", "rhs_weap_m4_grip2", "rhs_weap_m4_grip", "rhs_weap_m4_carryhandle", "rhs_weap_m4_carryhandle_pmag"];
 
 //primary weapon items - (array)
 _itemsPrimaryweapon = [];
@@ -126,6 +126,7 @@ _items = ["ACE_Flashlight_MX991","ACE_MapTools","ACE_CableTie","ACE_microDAGR"];
 params ["_player"];
 _player setCaptive true;    //unfortunately necessary due to the time consumed by changing the weapon
 [_player] call jk_loadOut_fnc_gear;
+_player setVariable ["ace_medical_medicClass", 0];
 _player setVariable ["JK_CrateSpawnAllowed", true];
 _player setVariable ["ACE_IsEngineer", 2];
 _player setVariable ["JK_isPilot", true];
