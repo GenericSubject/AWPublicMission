@@ -41,6 +41,10 @@ _crew = ["rh1_driver", "rh1_co", "rh1_gunner"];
 _jetPilot = ["pj_1", "pj_2"];
 //PJ
 _pjMedic = ["r_4"];
+//AT-SMAW
+_ATmk153 = [];
+//Paratrooper
+_paratrooper = [];
 
 // insert Classnames of the units
 _commandClass = ["B_Soldier_SL_F"];
